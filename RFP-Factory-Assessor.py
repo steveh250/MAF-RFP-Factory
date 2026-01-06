@@ -119,7 +119,7 @@ def save_to_word(result, output_filename: str = "rfp_assessment.docx"):
     print(f"\n✓ Response saved to: {output_filename}")
     return output_filename
 
-async def run_agent(company_info_file: str, rfp_file: str, output_file: str = "rfp_assessment.docx"):
+async def run_agent(rubric_info_file: str, rfp_file: str, output_file: str = "rfp_assessment.docx"):
     # 1. Initialize RAG and Reset DB
     rag_manager = RAGManager()
     rag_manager.reset_database()
@@ -189,7 +189,7 @@ if __name__ == "__main__":
 
     # Parse command line arguments
     if len(sys.argv) >= 3:
-        company_info_file = sys.argv[1]
+        rubric_info_file = sys.argv[1]
         rfp_file = sys.argv[2]
         output_file = sys.argv[3] if len(sys.argv) >= 4 else default_output
     else:
